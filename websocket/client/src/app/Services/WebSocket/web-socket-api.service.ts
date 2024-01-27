@@ -19,12 +19,9 @@ export class WebSocketAPIService {
     this.stompClient = Stomp.over(socket);
 
     this.stompClient.connect({}, (frame: any)=> {
-      console.log('Connected : ' + frame);
 
       //subscribe
       this.stompClient.subscribe('/topic/return-to',(response: any)=> {
-        console.log(response);
-
         this.showMessage(JSON.parse(response.body));
       });
     },(error:any)=>{
@@ -34,7 +31,6 @@ export class WebSocketAPIService {
   }
 
   showMessage(data:any){
-    console.log(data);
     this.dataTransfer.setData(data);
 
   }

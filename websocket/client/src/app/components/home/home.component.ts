@@ -37,7 +37,6 @@ export class HomeComponent {
 
     this.dataTransfer.ChatData.subscribe(
       (data:any)=>{
-        console.log("chat",data);
         this.ChatData=data;
 
       }
