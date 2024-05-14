@@ -23,6 +23,8 @@ public class ChatController {
     @Value("${openai.api.url}")
     private String apiUrl;
 
+    //Require to add healthy connection endpoint
+
     @GetMapping("/chat")
     public String chat(@RequestParam String prompt) {
         // create a request
